@@ -1,5 +1,24 @@
 const fs = require('fs');
 
+const generateLicense = (type) => {
+    let color;
+    if (type === "MPL") color = "red";
+    if (type === "GPL") color = "grey";
+    if (type === "Apache") color = "grenn";
+    if (type === "MIT") color = "blue";
+    if (type === "CC") color = "orange";
+    if (type === "BSD") color = "goldenrod";
+
+
+    return (
+        `
+        <h3>License</h3>
+        <img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" />
+        `
+    );
+
+};
+
 
 const generatePage = ({
     name,
@@ -34,10 +53,8 @@ const generatePage = ({
     <p>${bio}</p>
     <a href="#${linkedIn}">Linkedin</a>
     <a href="#${gitHub}">Github</a>
-    <h3>License</h3>
-    <img src="https://img.shields.io/badge/license-${license}-red" alt="badge-${license}" />
+    ${generateLicense(license)}
 </body>
-
 </html>
 `
 
