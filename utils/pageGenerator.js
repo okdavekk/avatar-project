@@ -4,7 +4,7 @@ const generateLicense = (type) => {
     let color;
     if (type === "MPL") color = "red";
     if (type === "GPL") color = "grey";
-    if (type === "Apache") color = "grenn";
+    if (type === "Apache") color = "green";
     if (type === "MIT") color = "blue";
     if (type === "CC") color = "orange";
     if (type === "BSD") color = "goldenrod";
