@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/okdavekk/avatar-project/issues"
   },
-  "homepage": "https://github.com/okdavekk/avatar-project#readme"
+  "homepage": "https://github.com/okdavekk/avatar-project#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }

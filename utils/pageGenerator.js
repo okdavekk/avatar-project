@@ -1,3 +1,18 @@
+const fs = require('fs');
+
+
+const generatePage = ({
+    name,
+    location,
+    bio,
+    linkedIn,
+    gitHub,
+    license
+}) => {
+    console.log('GENERATING PAGE...');
+
+    const template = (
+        `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,17 +27,29 @@
 
 <body>
     <h1>Avatar Generator</h1>
-    <h2>DK</h2>
+    <h2>${name}</h2>
     <img src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Prescription02&hairColor=Black&facialHairType=BeardLight&facialHairColor=Black&clotheType=ShirtCrewNeck&clotheColor=PastelRed&eyeType=Default&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light'
         alt="avatar" />
-    <h3>Charlotte, NC</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque dolores eum odit magnam voluptatum! Eos, itaque
-        veritatis illo inventore maxime ratione aperiam facere, rerum debitis voluptatibus in cupiditate, exercitationem
-        maiores!</p>
-    <a href="#linkedin">Linkedin</a>
-    <a href="#github">Github</a>
+    <h3>${location}</h3>
+    <p>${bio}</p>
+    <a href="#${linkedIn}">Linkedin</a>
+    <a href="#${gitHub}">Github</a>
     <h3>License</h3>
-    <img src="https://img.shields.io/badge/license-Apache-red" alt="badge-apache" />
+    <img src="https://img.shields.io/badge/license-${license}-red" alt="badge-${license}" />
 </body>
 
 </html>
+`
+
+    );
+
+    fs.writeFileSync('./output/index.html', template)
+    console.log('TEMPLATE GENERATED!')
+    process.exit();
+};
+
+
+module.exports = {
+    generatePage
+};
+
