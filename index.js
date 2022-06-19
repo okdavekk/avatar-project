@@ -4,43 +4,43 @@ const utils = require('./utils/pageGenerator')
 const questions = [
   {
     type: 'input',
-    message: 'What is your name?',
-    name: 'name',
+    message: 'Team Managers Name?',
+    name: 'managerName',
     // validate: (input) => input.length > 4 ? true : "Your name is too short"
   },
   {
     type: 'input',
-    message: 'What is your location?',
-    name: 'location',
+    message: 'What is your Employee ID',
+    name: 'managerID',
   },
   {
     type: 'input',
-    message: 'What is your story?',
-    name: 'bio',
+    message: 'What is your email address?',
+    name: 'managerEmail',
   },
   {
     type: 'input',
-    message: 'What is your linkedin?',
-    name: 'linkedin',
+    message: 'What is your office number',
+    name: 'managerOfficeNumber',
   },
-  {
-    type: 'input',
-    message: 'What is your github username?',
-    name: 'github',
-  },
-  {
-    type: 'rawlist',
-    message: 'What License was this created with?',
-    name: 'license',
-    choices: [
-        "MPL",
-        "GPL",
-        "Apache",
-        "MIT",
-        "CC",
-        "BSD",
-    ]
-  }
+  // {
+  //   type: 'input',
+  //   message: 'What is your github username?',
+  //   name: 'github',
+  // },
+  // {
+  //   type: 'rawlist',
+  //   message: 'What License was this created with?',
+  //   name: 'license',
+  //   choices: [
+  //       "MPL",
+  //       "GPL",
+  //       "Apache",
+  //       "MIT",
+  //       "CC",
+  //       "BSD",
+  //   ]
+  // }
 
 ];
 
