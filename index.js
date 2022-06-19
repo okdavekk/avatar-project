@@ -6,6 +6,7 @@ const questions = [
     type: 'input',
     message: 'What is your name?',
     name: 'name',
+    validate: (input) => input.length > 4 ? true : "Your name is too short"
   },
   {
     type: 'input',

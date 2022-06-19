@@ -9,10 +9,11 @@ const generateLicense = (type) => {
     if (type === "CC") color = "orange";
     if (type === "BSD") color = "goldenrod";
 
-
+//need the space between the header if I was to use this in a readme generator
     return (
         `
         <h3>License</h3>
+        
         <img src="https://img.shields.io/badge/license-${type}-${color}" alt="badge-${type}" height="44" />
         `
     );
