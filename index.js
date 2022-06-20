@@ -79,7 +79,7 @@ const internQuestions = [
   {
     type: 'list',
     message: 'Enter Interns School',
-    name: 'internsSchool'
+    name: 'internSchool'
   },
 ]
 
