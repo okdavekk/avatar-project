@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const utils = require('./utils/pageGenerator')
 
-const questions = [
+const mainQuestions = [
   {
     type: 'input',
     message: 'Team Managers Name?',
@@ -23,28 +23,78 @@ const questions = [
     message: 'What is your office number',
     name: 'managerOfficeNumber',
   },
-  // {
-  //   type: 'input',
-  //   message: 'What is your github username?',
-  //   name: 'github',
-  // },
-  // {
-  //   type: 'rawlist',
-  //   message: 'What License was this created with?',
-  //   name: 'license',
-  //   choices: [
-  //       "MPL",
-  //       "GPL",
-  //       "Apache",
-  //       "MIT",
-  //       "CC",
-  //       "BSD",
-  //   ]
-  // }
-
+  {
+    type: 'list',
+    message: 'Add employee?',
+    name: 'employeeAdd',
+    choices: [
+        "Engineer",
+        "Intern",
+        "Exit?",
+    ]
+  }
 ];
 
-inquirer.prompt(questions).then((answers) => {
+const engineerQuestions = [
+  {
+    type: 'list',
+    message: 'Enter Engineers Name',
+    name: 'engineerName',
+  },
+  {
+    type: 'list',
+    message: 'Enter Engineers ID',
+    name: 'engineerID'
+  },
+  {
+    type: 'list',
+    message: 'Enter Engineers Email',
+    name: 'engineerEmail'
+  },
+  {
+    type: 'list',
+    message: 'Enter Engineers Github Username',
+    name: 'engineerGitHub'
+
+    //need some sort of return 
+  },
+]
+
+const internQuestions = [
+  {
+    type: 'list',
+    message: 'Enter Interns Name',
+    name: 'InternName',
+  },
+  {
+    type: 'list',
+    message: 'Enter Intern ID',
+    name: 'internID'
+  },
+  {
+    type: 'list',
+    message: 'Enter Intern Email',
+    name: 'internEmail'
+  },
+  {
+    type: 'list',
+    message: 'Enter Interns School',
+    name: 'internsSchool'
+  },
+]
+
+inquirer.prompt(mainQuestions).then((answers) => {
   console.log(answers);
   utils.generatePage(answers);
+
 });
+
+// inquirer.prompt(engineerQuestions).then((answers) => {
+//   console.log(answers);
+//   utils.generateSomeone(answers);
+// })
+
+// inquirer.prompt(internQuestions).then((answers) => {
+//   console.log(answers);
+//   utils.generateSomeone(answers);
+// })
