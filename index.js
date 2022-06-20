@@ -6,7 +6,6 @@ const mainQuestions = [
     type: 'input',
     message: 'Team Managers Name?',
     name: 'managerName',
-    // validate: (input) => input.length > 4 ? true : "Your name is too short"
   },
   {
     type: 'input',
@@ -28,73 +27,81 @@ const mainQuestions = [
     message: 'Add employee?',
     name: 'employeeAdd',
     choices: [
-        "Engineer",
-        "Intern",
-        "Exit?",
+      "Engineer",
+      "Intern",
+      "Exit?",
     ]
-  }
-];
-
-const engineerQuestions = [
+  },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Engineers Name',
     name: 'engineerName',
+    when(answers) {
+      return answers.employeeAdd === "Engineer"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Engineers ID',
-    name: 'engineerID'
+    name: 'engineerID',
+    when(answers) {
+      return answers.employeeAdd === "Engineer"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Engineers Email',
-    name: 'engineerEmail'
+    name: 'engineerEmail',
+    when(answers) {
+      return answers.employeeAdd === "Engineer"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Engineers Github Username',
-    name: 'engineerGitHub'
-
-    //need some sort of return 
+    name: 'engineerGitHub',
+    when(answers) {
+      return answers.employeeAdd === "Engineer"
+    }
   },
-]
-
-const internQuestions = [
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Interns Name',
-    name: 'InternName',
+    name: 'internName',
+    when(answers) {
+      return answers.employeeAdd === "Intern"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Intern ID',
-    name: 'internID'
+    name: 'internID',
+    when(answers) {
+      return answers.employeeAdd === "Intern"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Intern Email',
-    name: 'internEmail'
+    name: 'internEmail',
+    when(answers) {
+      return answers.employeeAdd === "Intern"
+    }
   },
   {
-    type: 'list',
+    type: 'input',
     message: 'Enter Interns School',
-    name: 'internSchool'
+    name: 'internSchool',
+    when(answers) {
+      return answers.employeeAdd === "Intern"
+    }
   },
-]
+
+];
+
 
 inquirer.prompt(mainQuestions).then((answers) => {
   console.log(answers);
   utils.generatePage(answers);
 
 });
-
-// inquirer.prompt(engineerQuestions).then((answers) => {
-//   console.log(answers);
-//   utils.generateSomeone(answers);
-// })
-
-// inquirer.prompt(internQuestions).then((answers) => {
-//   console.log(answers);
-//   utils.generateSomeone(answers);
-// })

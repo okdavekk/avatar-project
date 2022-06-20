@@ -5,6 +5,15 @@ const generatePage = ({
     managerID,
     managerEmail,
     managerOfficeNumber,
+    engineerName,
+    engineerID,
+    engineerEmail,
+    engineerGitHub,
+    internName,
+    internID,
+    internEmail,
+    internSchool,
+
 }) => {
     console.log('GENERATING PAGE...');
 
@@ -34,7 +43,29 @@ const generatePage = ({
                 <p>Office Number: ${managerOfficeNumber}
                 <p>
         </section>
+
+
+        <section>
+        <h4>Engineer</h2>
+            <p>Name: ${engineerName}</p>
+            <p>Employee ID: ${engineerID}</p>
+            <p>Email Address:
+                <a href="mailto:${engineerEmail}">${managerEmail}</a>
+            </p>
+            <p>Github: 
+            <a href="https://github.com/${engineerGitHub}"></a>
+        </section>
     
+        <section>
+        <h4>Intern</h2>
+            <p>Name: ${internName}</p>
+            <p>Employee ID: ${internID}</p>
+            <p>Email Address:
+                <a href="mailto:${internEmail}">${internEmail}</a>
+            </p>
+            <p>Office Number: ${internSchool}
+            <p>
+        </section>
 
         
     </body>
@@ -50,39 +81,7 @@ const generatePage = ({
 };
 
 
-const generateSomeone = (type) => {
-    if (type === "Engineer") {
-        engineerQuestions();
-
-        return (
-            engineerName,
-            engineerID,
-            engineerEmail,
-            engineerGithub
-                `
-
-        <section>
-            <h4>Engineer</h2>
-                <p>Name: ${engineerName}</p>
-                <p>Employee ID: ${engineerID}</p>
-                <p>Email Address:
-                    <a href="mailto:${engineerEmail}">${engineerEmail}</a>
-                </p>
-                <p>Github: 
-                    <a href="https://github.com/${engineerGithub}"></a>
-                </p>
-                <p>
-        </section>
-
-            `
-        );
-    };
-
-};
-
-
 module.exports = {
     generatePage,
-    generateSomeone,
 };
 
