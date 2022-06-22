@@ -14,6 +14,7 @@
 
 - [VIDEO LINK](https://www.awesomescreenshot.com/video/9576714)
 
+- [HTML](https://github.com/okdavekk/team-profile-generator/blob/main/output/index.html)
 
 ## Description
 ### Your Task
