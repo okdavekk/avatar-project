@@ -50,10 +50,10 @@ const generatePage = ({
             <p>Name: ${engineerName}</p>
             <p>Employee ID: ${engineerID}</p>
             <p>Email Address:
-                <a href="mailto:${engineerEmail}">${managerEmail}</a>
+                <a href="mailto:${engineerEmail}">${engineerEmail}</a>
             </p>
             <p>Github: 
-            <a href="https://github.com/${engineerGitHub}"></a>
+            <a href="https://github.com/${engineerGitHub}">${engineerGitHub}</a>
         </section>
     
         <section>
