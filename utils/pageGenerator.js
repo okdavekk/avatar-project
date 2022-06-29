@@ -1,20 +1,8 @@
 const fs = require('fs');
 
-const generatePage = ({
-    managerName,
-    managerID,
-    managerEmail,
-    managerOfficeNumber,
-    engineerName,
-    engineerID,
-    engineerEmail,
-    engineerGitHub,
-    internName,
-    internID,
-    internEmail,
-    internSchool,
-
-}) => {
+const generatePage = (
+    team
+) => {
     console.log('GENERATING PAGE...');
 
     const template = (
@@ -35,7 +23,7 @@ const generatePage = ({
         <body>
         <section>
             <h4>Manager</h2>
-                <p>Name: ${managerName}</p>
+                <p>Name: ${team[0].name}</p>
                 <p>Employee ID: ${managerID}</p>
                 <p>Email Address:
                     <a href="mailto:${managerEmail}">${managerEmail}</a>
